@@ -1,0 +1,6 @@
+{
+  "nano": {
+    "command": "xterm",
+    "args": ["-e", "nano"]
+  }
+}
