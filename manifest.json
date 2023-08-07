@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "Edit text areas in webpages with a text editor program.",
   "homepage_url": "https://github.com/taupiqueur/chrome-nano",
+  "author": "Mathieu Ablasou <taupiqueur.kanto@gmail.com>",
   "manifest_version": 3,
   "background": {
     "type": "module",
