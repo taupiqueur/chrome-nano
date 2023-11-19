@@ -21,7 +21,7 @@ Example configuration:
 {
   "nano": {
     "command": "xterm",
-    "args": ["-e", "nano"]
+    "args": ["-e", "nano", "--"]
   }
 }
 ```
@@ -30,7 +30,7 @@ Example configuration:
 {
   "nano": {
     "command": "open",
-    "args": ["-n", "-W"]
+    "args": ["-n", "-W", "--"]
   }
 }
 ```

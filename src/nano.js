@@ -114,7 +114,7 @@ async function editTextArea(command, args) {
 
 export default {
   command: 'xterm',
-  args: ['-e', 'nano'],
+  args: ['-e', 'nano', '--'],
   open(injectionTarget) {
     return nano(this, injectionTarget)
   }
