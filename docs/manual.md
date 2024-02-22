@@ -13,7 +13,7 @@ Navigate to `chrome://extensions/shortcuts` to configure keyboard shortcuts.
 ### Configure the text editor program
 
 You can also configure the text editor program by importing and exporting settings
-in the **Options** page—Right-click the nano toolbar button and select **Options**.
+in the “Options” page—Right-click the nano toolbar button and select “Options”.
 
 Example configuration:
 
