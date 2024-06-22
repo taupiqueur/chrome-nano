@@ -7,6 +7,8 @@
 import nano from './nano.js'
 import optionsWorker from './options/service_worker.js'
 
+const { TAB_GROUP_ID_NONE } = chrome.tabGroups
+
 // Retrieve the default config.
 const gettingDefaults = fetch('config.json')
   .then((response) => response.json())
@@ -20,9 +22,21 @@ const gettingDefaults = fetch('config.json')
  */
 function createMenuItems() {
   chrome.contextMenus.create({
-    id: 'open-nano',
+    id: 'open_nano',
     title: 'Open with nano',
     contexts: ['editable', 'selection']
+  })
+
+  chrome.contextMenus.create({
+    id: 'open_documentation',
+    title: 'Documentation',
+    contexts: ['action']
+  })
+
+  chrome.contextMenus.create({
+    id: 'open_support_chat',
+    title: 'Support Chat',
+    contexts: ['action']
   })
 }
 
@@ -146,12 +160,50 @@ function onAction(tab) {
  * @returns {void}
  */
 function onMenuItemClicked(info, tab) {
-  nano.open({
-    tabId: tab.id,
-    frameIds: [
-      info.frameId
-    ]
+  switch (info.menuItemId) {
+    case 'open_nano':
+      nano.open({
+        tabId: tab.id,
+        frameIds: [
+          info.frameId
+        ]
+      })
+      break
+
+    case 'open_documentation':
+      openNewTabRight(tab, 'src/manual/manual.html')
+      break
+
+    case 'open_support_chat':
+      openNewTabRight(tab, 'https://web.libera.chat/gamja/#taupiqueur')
+      break
+  }
+}
+
+/**
+ * Opens and activates a new tab to the right.
+ *
+ * @param {chrome.tabs.Tab} openerTab
+ * @param {string} url
+ * @returns {Promise<void>}
+ */
+async function openNewTabRight(openerTab, url) {
+  const createdTab = await chrome.tabs.create({
+    active: true,
+    url,
+    index: openerTab.index + 1,
+    openerTabId: openerTab.id,
+    windowId: openerTab.windowId
   })
+
+  if (openerTab.groupId !== TAB_GROUP_ID_NONE) {
+    await chrome.tabs.group({
+      groupId: openerTab.groupId,
+      tabIds: [
+        createdTab.id
+      ]
+    })
+  }
 }
 
 /**
