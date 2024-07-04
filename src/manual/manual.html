@@ -30,8 +30,21 @@
           <p>
             Copy the extension ID and run the following in your terminal.
           </p>
-          <pre><code>chrome-shell install [--target=&lt;platform&gt;] [&lt;extension-id&gt;...]
+          <div class="code-block-container">
+            <pre><code><b>chrome-shell</b> <b>install</b> [<b>--target</b>=<i>platform</i>] [<i>extension_ids</i>]
 </code></pre>
+            <div>
+              <button
+                aria-label="Copy"
+                data-copy-feedback="Copied!"
+                data-action="copyToClipboard"
+                value="chrome-shell install [--target=platform] [extension_ids]
+"
+              >
+                Copy
+              </button>
+            </div>
+          </div>
           <p>
             Possible targets are <code>chrome</code>, <code>chrome-dev</code>, <code>chrome-beta</code>, <code>chrome-canary</code> and <code>chromium</code>.
           </p>
@@ -72,30 +85,80 @@
           <p>
             Example configuration:
           </p>
-          <pre><code data-lang="json">{
+          <div class="code-block-container">
+            <pre><code data-lang="json">{
   <span data-type="string">"nano"</span>: {
     <span data-type="string">"command"</span>: <span data-type="string">"xterm"</span>,
     <span data-type="string">"args"</span>: [<span data-type="string">"-e"</span>, <span data-type="string">"nano"</span>, <span data-type="string">"--"</span>]
   }
 }
 </code></pre>
-          <pre><code data-lang="json">{
+            <div>
+              <button
+                aria-label="Copy"
+                data-copy-feedback="Copied!"
+                data-action="copyToClipboard"
+                value="{
+  &quot;nano&quot;: {
+    &quot;command&quot;: &quot;xterm&quot;,
+    &quot;args&quot;: [&quot;-e&quot;, &quot;nano&quot;, &quot;--&quot;]
+  }
+}
+"
+              >
+                Copy
+              </button>
+            </div>
+          </div>
+          <div class="code-block-container">
+            <pre><code data-lang="json">{
   <span data-type="string">"nano"</span>: {
     <span data-type="string">"command"</span>: <span data-type="string">"open"</span>,
     <span data-type="string">"args"</span>: [<span data-type="string">"-n"</span>, <span data-type="string">"-W"</span>, <span data-type="string">"--"</span>]
   }
 }
 </code></pre>
+            <div>
+              <button
+                aria-label="Copy"
+                data-copy-feedback="Copied!"
+                data-action="copyToClipboard"
+                value="{
+  &quot;nano&quot;: {
+    &quot;command&quot;: &quot;open&quot;,
+    &quot;args&quot;: [&quot;-n&quot;, &quot;-W&quot;, &quot;--&quot;]
+  }
+}
+"
+              >
+                Copy
+              </button>
+            </div>
+          </div>
           <p>
             Make sure the commands are in your <code>PATH</code>.
           </p>
           <p>
             On macOS, you can set the <code>PATH</code> environment variable for all services through <a href="https://ss64.com/osx/launchctl.html">launchctl</a>.
           </p>
-          <pre><code data-lang="sh"><span data-type="keyword">sudo</span> launchctl config user path <span data-type="string">"$PATH"</span>
+          <div class="code-block-container">
+            <pre><code data-lang="sh"><span data-type="keyword">sudo</span> launchctl config user path <span data-type="string">"$PATH"</span>
 </code></pre>
+            <div>
+              <button
+                aria-label="Copy"
+                data-copy-feedback="Copied!"
+                data-action="copyToClipboard"
+                value="sudo launchctl config user path &quot;$PATH&quot;
+"
+              >
+                Copy
+              </button>
+            </div>
+          </div>
         </section>
       </section>
     </main>
+    <script type="module" src="manual.js"></script>
   </body>
 </html>
