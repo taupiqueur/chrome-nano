@@ -4,9 +4,6 @@ version = $(shell git describe --tags --always)
 
 all: assets/nano-logo@16px.png assets/nano-logo@32px.png assets/nano-logo@48px.png assets/nano-logo@128px.png
 
-assets/nano-logo.svg:
-	curl -sSL -z $@ --create-dirs -o $@ https://upload.wikimedia.org/wikipedia/commons/8/8a/Gnu-nano.svg
-
 assets/nano-logo@16px.png: assets/nano-logo.svg
 	inkscape $< -o $@ -w 16 -h 16
 
