@@ -13,7 +13,7 @@ A browser extension that lets you edit text areas in webpages with a text editor
 [Documentation]: docs/manual.md
 [Changelog]: CHANGELOG.md
 [Contributing]: CONTRIBUTING.md
-[Add to Chrome]: #Installation
+[Add to Chrome]: #installation
 
 ## Installation
 
