@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nano Manual</title>
+    <link rel="icon" href="favicon.svg">
+    <link rel="stylesheet" href="manual.css">
+  </head>
+  <body>
+    <main id="nano_manual">
+      <h1>
+        <a href="#nano_manual">
+          nano Manual
+        </a>
+      </h1>
+      <section id="post_installation_instructions">
+        <h2>
+          <a href="#post_installation_instructions">
+            Post-installation instructions
+          </a>
+        </h2>
+        <p>
+          Requires <a href="https://github.com/taupiqueur/chrome-shell" target="_blank">chrome-shell</a> for running shell commands.
+        </p>
+        <section id="allow_native_messaging_with_the_shell_application">
+          <h3>
+            <a href="#allow_native_messaging_with_the_shell_application">
+              Allow native messaging with the shell application
+            </a>
+          </h3>
+          <p>
+            Copy the extension ID and run the following in your terminal.
+          </p>
+          <div class="code-block-container">
+            <pre><code><b>chrome-shell</b> <b>install</b> [<b>--target</b>=<i>platform</i>] [<i>extension_ids</i>]
+</code></pre>
+            <div>
+              <button
+                aria-label="Copy"
+                data-copy-feedback="Copied!"
+                data-action="copyToClipboard"
+                value="chrome-shell install [--target=platform] [extension_ids]
+"
+              >
+                Copy
+              </button>
+            </div>
+          </div>
+          <p>
+            Possible targets are <code>chrome</code>, <code>chrome-dev</code>, <code>chrome-beta</code>, <code>chrome-canary</code> and <code>chromium</code>.
+          </p>
+        </section>
+      </section>
+      <section id="usage">
+        <h2>
+          <a href="#usage">
+            Usage
+          </a>
+        </h2>
+        <p>
+          <kbd>Ctrl</kbd>+<kbd>I</kbd> is the main keyboard shortcut.
+        </p>
+        <p>
+          Use it to edit text areas in webpages with nano.
+        </p>
+        <section id="configure_keyboard_shortcuts">
+          <h3>
+            <a href="#configure_keyboard_shortcuts">
+              Configure keyboard shortcuts
+            </a>
+          </h3>
+          <p>
+            Navigate to <a href="chrome://extensions/shortcuts" target="_blank">chrome://extensions/shortcuts</a> to configure keyboard shortcuts.
+          </p>
+        </section>
+        <section id="configure_the_text_editor_program">
+          <h3>
+            <a href="#configure_the_text_editor_program">
+              Configure the text editor program
+            </a>
+          </h3>
+          <p>
+            You can also configure the text editor program by importing and exporting settings
+            in the “Options” page—Right-click the nano toolbar button and select “Options”.
+          </p>
+          <p>
+            Example configuration:
+          </p>
+          <div class="code-block-container">
+            <pre><code data-lang="json">{
+  <span data-type="string">"nano"</span>: {
+    <span data-type="string">"command"</span>: <span data-type="string">"xterm"</span>,
+    <span data-type="string">"args"</span>: [<span data-type="string">"-e"</span>, <span data-type="string">"nano"</span>, <span data-type="string">"--"</span>]
+  }
+}
+</code></pre>
+            <div>
+              <button
+                aria-label="Copy"
+                data-copy-feedback="Copied!"
+                data-action="copyToClipboard"
+                value="{
+  &quot;nano&quot;: {
+    &quot;command&quot;: &quot;xterm&quot;,
+    &quot;args&quot;: [&quot;-e&quot;, &quot;nano&quot;, &quot;--&quot;]
+  }
+}
+"
+              >
+                Copy
+              </button>
+            </div>
+          </div>
+          <div class="code-block-container">
+            <pre><code data-lang="json">{
+  <span data-type="string">"nano"</span>: {
+    <span data-type="string">"command"</span>: <span data-type="string">"open"</span>,
+    <span data-type="string">"args"</span>: [<span data-type="string">"-n"</span>, <span data-type="string">"-W"</span>, <span data-type="string">"--"</span>]
+  }
+}
+</code></pre>
+            <div>
+              <button
+                aria-label="Copy"
+                data-copy-feedback="Copied!"
+                data-action="copyToClipboard"
+                value="{
+  &quot;nano&quot;: {
+    &quot;command&quot;: &quot;open&quot;,
+    &quot;args&quot;: [&quot;-n&quot;, &quot;-W&quot;, &quot;--&quot;]
+  }
+}
+"
+              >
+                Copy
+              </button>
+            </div>
+          </div>
+          <p>
+            Make sure the commands are in your <code>PATH</code>.
+          </p>
+          <p>
+            On macOS, you can set the <code>PATH</code> environment variable for all services through <a href="https://ss64.com/osx/launchctl.html" target="_blank">launchctl</a>.
+          </p>
+          <div class="code-block-container">
+            <pre><code data-lang="sh"><span data-type="keyword">sudo</span> launchctl config user path <span data-type="string">"$PATH"</span>
+</code></pre>
+            <div>
+              <button
+                aria-label="Copy"
+                data-copy-feedback="Copied!"
+                data-action="copyToClipboard"
+                value="sudo launchctl config user path &quot;$PATH&quot;
+"
+              >
+                Copy
+              </button>
+            </div>
+          </div>
+        </section>
+      </section>
+      <section id="contributing">
+        <h2>
+          <a href="#contributing">
+            Contributing
+          </a>
+        </h2>
+        <p>
+          Report bugs on the <a href="https://github.com/taupiqueur/chrome-nano/issues" target="_blank">issue tracker</a>,
+          ask questions on the <a href="https://web.libera.chat/gamja/#taupiqueur" target="_blank">IRC channel</a>,
+          send patches on the <a href="https://github.com/taupiqueur/chrome-nano/pulls" target="_blank">mailing list</a>.
+        </p>
+      </section>
+    </main>
+    <script type="module" src="manual.js"></script>
+  </body>
+</html>
