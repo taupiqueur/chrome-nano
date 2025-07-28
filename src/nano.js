@@ -61,7 +61,8 @@ async function editTextArea(command, args) {
       new ClipboardEvent('paste', {
         clipboardData: dataTransfer,
         bubbles: true,
-        cancelable: true
+        cancelable: true,
+        composed: true,
       })
     )
   }
